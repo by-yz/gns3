@@ -82,7 +82,109 @@ dnf -y install dhcp-server
 vi /etc/dhcp/dhcpd.conf
 
 subnet 10.1.1.0 netmask 255.255.255.0 {
-    range dynamic-bootp 10.0.0.0 10.0.0.50;
+    range dynamic-bootp 10.1.1.0 10.1.1.50;
     option broadcast-address 10.0.0.255;
 }
 
+sudo systemctl enable dhcpd
+erreur
+sudo nano /etc/sysconfig/dhcpd
+DHCP-INTEFACE="enp0s3"
+sudo systemctl enable dhcpd
+sudo systemct status dhcpd
+
+
+PC1> ip dhcp
+DDORA IP 10.1.1.10/24 GW 10.1.1.1
+
+PC1> show ip
+
+NAME        : PC1[1]
+IP/MASK     : 10.1.1.10/24
+GATEWAY     : 10.1.1.1
+DNS         : 8.8.8.8  8.8.4.4
+DHCP SERVER : 10.1.1.2
+DHCP LEASE  : 3555, 3600/1800/3150
+MAC         : 00:50:79:66:68:00
+LPORT       : 20007
+RHOST:PORT  : 127.0.0.1:20008
+MTU         : 1500
+
+
+PC2> ip dhcp
+DDORA IP 10.1.1.11/24 GW 10.1.1.1
+
+PC2> show ip
+
+NAME        : PC2[1]
+IP/MASK     : 10.1.1.11/24
+GATEWAY     : 10.1.1.1
+DNS         : 8.8.8.8  8.8.4.4
+DHCP SERVER : 10.1.1.2
+DHCP LEASE  : 2935, 3600/1800/3150
+MAC         : 00:50:79:66:68:01
+LPORT       : 20009
+RHOST:PORT  : 127.0.0.1:20010
+MTU         : 1500
+
+PC3> ip dhcp
+DDORA IP 10.1.1.12/24 GW 10.1.1.1
+
+
+PC3> show ip
+
+NAME        : PC3[1]
+IP/MASK     : 10.1.1.12/24
+GATEWAY     : 10.1.1.1
+DNS         : 8.8.8.8  8.8.4.4
+DHCP SERVER : 10.1.1.2
+DHCP LEASE  : 3589, 3600/1800/3150
+MAC         : 00:50:79:66:68:02
+LPORT       : 20012
+RHOST:PORT  : 127.0.0.1:20013
+MTU         : 1500
+
+
+sudo apt install dnsmasq
+sudo nano /etc/dnsmasq.conf
+
+
+interface=eth0 
+dhcp-range=10.1.1.210,10.1.1.250,12h
+dhcp-option=3,10.1.1.1
+
+sudo systemctl restart dnsmasq
+sudo systemctl enable dnsmasq
+
+
+PC3> ip dhcp
+DORA IP 10.1.1.247/24 GW 10.1.1.1
+
+PC3> show ip
+
+NAME        : PC3[1]
+IP/MASK     : 10.1.1.247/24
+GATEWAY     : 10.1.1.1
+DNS         : 10.1.1.16
+DHCP SERVER : 10.1.1.16
+DHCP LEASE  : 43197, 43200/21600/37800
+MAC         : 00:50:79:66:68:02
+LPORT       : 20012
+RHOST:PORT  : 127.0.0.1:20013
+MTU         : 1500
+
+
+PC1> ip dhcp
+DORA IP 10.1.1.245/24 GW 10.1.1.1
+
+PC1> ip dhcp
+DORA IP 10.1.1.245/24 GW 10.1.1.1
+
+PC1> ip dhcp
+DORA IP 10.1.1.245/24 GW 10.1.1.1
+
+PC1> ip dhcp
+DORA IP 10.1.1.245/24 GW 10.1.1.1
+
+PC1> ip dhcp
+DORA IP 10.1.1.10/24 GW 10.1.1.1
