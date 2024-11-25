@@ -28,20 +28,20 @@ Ping 10.1.1.1
 84 bytes from 10.1.1.1 icmp_seq=4 ttl=64 time=0.765 ms
 84 bytes from 10.1.1.1 icmp_seq=5 ttl=64 time=0.595 ms’
 
-Wireshark
+### Wireshark
 Ping 10.1.1.1
 Piece pcap
 ARP 
 Ping 10 .1.1.1
 ‘00:50:79:66:68:00  10.1.1.1 expires in 8 seconds’
 
-II
+## II
 Adresse MAC
 PC1> show ip  : 00:50:79:66:68:00
 PC2> show ip  : 00:50:79:66:68:01
 PC3> show ip  : 00:50:79:66:68:02
 
-IP
+### IP
 PC1> ip 10.1.1.1
 Checking for duplicate address...
 PC1 : 10.1.1.1 255.255.255.0
@@ -52,7 +52,7 @@ PC3> ip 10.1.1.3
 Checking for duplicate address...
 PC3 : 10.1.1.3 255.255.255.0
 
-Ping 
+### Ping 
 PC1> ping 10.1.1.2
 84 bytes from 10.1.1.2 icmp_seq=1 ttl=64 time=1.286 ms
 84 bytes from 10.1.1.2 icmp_seq=2 ttl=64 time=0.539 ms
@@ -75,7 +75,7 @@ PC1> ping 10.1.1.3
 84 bytes from 10.1.1.3 icmp_seq=4 ttl=64 time=0.570 ms
 84 bytes from 10.1.1.3 icmp_seq=5 ttl=64 time=0.922 ms
 
-III
+## III
 
 dnf -y install dhcp-server
 
@@ -173,6 +173,8 @@ LPORT       : 20012
 RHOST:PORT  : 127.0.0.1:20013
 MTU         : 1500
 
+
+## Dhcp Spoofing
 
 PC1> ip dhcp
 DORA IP 10.1.1.245/24 GW 10.1.1.1
