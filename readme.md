@@ -81,15 +81,19 @@ dnf -y install dhcp-server
 
 vi /etc/dhcp/dhcpd.conf
 
+
+default-lease-time 3600;
+max-lease-time 86400:
+
+authoritative;
 subnet 10.1.1.0 netmask 255.255.255.0 {
     range dynamic-bootp 10.1.1.0 10.1.1.50;
-    option broadcast-address 10.0.0.255;
+    option routers 10.1.1.1;
+    option domain-name-servers 8.8.8.8, 8.8.4.4;
+    option subnet-mask 255.255.255.0;
 }
 
-sudo systemctl enable dhcpd
-erreur
-sudo nano /etc/sysconfig/dhcpd
-DHCP-INTEFACE="enp0s3"
+
 sudo systemctl enable dhcpd
 sudo systemct status dhcpd
 
