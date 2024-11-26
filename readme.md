@@ -180,17 +180,28 @@ MTU         : 1500
 
 ## Dhcp Spoofing
 
-PC1> ip dhcp
-DORA IP 10.1.1.245/24 GW 10.1.1.1
+PC1> show ip
+
+NAME        : PC1[1]
+IP/MASK     : 0.0.0.0/0
+GATEWAY     : 0.0.0.0
+DNS         :
+MAC         : 00:50:79:66:68:01
+LPORT       : 20008
+RHOST:PORT  : 127.0.0.1:20009
+MTU         : 1500
 
 PC1> ip dhcp
-DORA IP 10.1.1.245/24 GW 10.1.1.1
+DDORA IP 10.1.1.246/24 GW 10.1.1.1
 
 PC1> ip dhcp
-DORA IP 10.1.1.245/24 GW 10.1.1.1
+DORA IP 10.1.1.11/24 GW 10.1.1.1
 
 PC1> ip dhcp
-DORA IP 10.1.1.245/24 GW 10.1.1.1
+DORA IP 10.1.1.11/24 GW 10.1.1.1
 
 PC1> ip dhcp
-DORA IP 10.1.1.10/24 GW 10.1.1.1
+DORA IP 10.1.1.11/24 GW 10.1.1.1
+
+PC1> ip dhcp
+DORA IP 10.1.1.246/24 GW 10.1.1.1
