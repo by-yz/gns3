@@ -530,3 +530,84 @@ PC1> ping 1.1.1.1
 84 bytes from 1.1.1.1 icmp_seq=5 ttl=57 time=37.057 ms
 
 
+### Partie III
+
+
+apres avoir bien conf le serv dhcp ( comme dhab )
+PC4> show ip
+
+NAME        : PC4[1]
+IP/MASK     : 0.0.0.0/0
+GATEWAY     : 0.0.0.0
+DNS         :
+MAC         : 00:50:79:66:68:03
+LPORT       : 20026
+RHOST:PORT  : 127.0.0.1:20027
+MTU         : 1500
+
+PC4> ip dhcp
+DDORA IP 10.3.2.10/24 GW 10.3.2.254
+
+PC4> show ip
+
+NAME        : PC4[1]
+IP/MASK     : 10.3.2.10/24
+GATEWAY     : 10.3.2.254
+DNS         : 1.1.1.1
+DHCP SERVER : 10.3.2.253
+DHCP LEASE  : 3594, 3600/1800/3150
+MAC         : 00:50:79:66:68:03
+LPORT       : 20026
+RHOST:PORT  : 127.0.0.1:20027
+MTU         : 1500
+
+
+PC4> ping efrei.fr
+efrei.fr resolved to 51.255.68.208
+
+84 bytes from 51.255.68.208 icmp_seq=1 ttl=49 time=50.062 ms
+84 bytes from 51.255.68.208 icmp_seq=2 ttl=49 time=50.448 ms
+84 bytes from 51.255.68.208 icmp_seq=3 ttl=49 time=43.706 ms
+84 bytes from 51.255.68.208 icmp_seq=4 ttl=49 time=49.855 ms
+
+
+PC4> ip dhcp
+DORA IP 10.3.2.10/24 GW 10.3.2.254
+
+
+
+PC4> show ip
+
+NAME        : PC4[1]
+IP/MASK     : 10.3.2.10/24
+GATEWAY     : 10.3.2.254
+DNS         : 10.3.3.1
+DHCP SERVER : 10.3.2.253
+DHCP LEASE  : 2682, 3600/1800/3150
+MAC         : 00:50:79:66:68:03
+LPORT       : 20021
+RHOST:PORT  : 127.0.0.1:20022
+MTU         : 1500
+
+
+
+apres moulte peripetie
+
+PC4> ping dns.tp3.b2
+dns.tp3.b2 resolved to 10.3.3.1
+
+84 bytes from 10.3.3.1 icmp_seq=1 ttl=63 time=22.576 ms
+84 bytes from 10.3.3.1 icmp_seq=2 ttl=63 time=16.156 ms
+84 bytes from 10.3.3.1 icmp_seq=3 ttl=63 time=19.775 ms
+84 bytes from 10.3.3.1 icmp_seq=4 ttl=63 time=22.510 ms
+84 bytes from 10.3.3.1 icmp_seq=5 ttl=63 time=22.680 ms
+
+PC4> ping efrei.fr
+efrei.fr resolved to 51.255.68.208
+
+84 bytes from 51.255.68.208 icmp_seq=1 ttl=53 time=62.301 ms
+84 bytes from 51.255.68.208 icmp_seq=2 ttl=53 time=55.514 ms
+84 bytes from 51.255.68.208 icmp_seq=3 ttl=53 time=52.567 ms
+84 bytes from 51.255.68.208 icmp_seq=4 ttl=53 time=41.024 ms
+^C
+
