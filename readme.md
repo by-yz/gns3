@@ -923,3 +923,71 @@ efrei.fr resolved to 51.255.68.208
   </body>
 </html>
 [root@localhost ~]#
+
+
+
+### Partie IV 
+
+byby㉿byby)-[~]
+└─$ sudo dhclient  
+[sudo] password for byby: 
+                                                                             
+┌──(byby㉿byby)-[~]
+└─$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:79:12:61 brd ff:ff:ff:ff:ff:ff
+    inet 10.3.2.13/24 brd 10.3.2.255 scope global dynamic eth0
+       valid_lft 3598sec preferred_lft 3598sec
+    inet6 fe80::a00:27ff:fe79:1261/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                             
+┌──(byby㉿byby)-[~]
+└─$ nslookup
+> set type=AXFR
+> tp3.b2 dns.tp3.b2
+Server:         10.3.3.1
+Address:        10.3.3.1#53
+
+tp3.b2
+        origin = dns.tp3.b2
+        mail addr = admin.tp3.b2
+        serial = 2019061800
+        refresh = 3600
+        retry = 1800
+        expire = 604800
+        minimum = 86400
+tp3.b2  nameserver = dns.tp3.b2.
+Name:   coolsite.tp3.b2
+Address: 10.3.3.4
+Name:   dns.tp3.b2
+Address: 10.3.3.1
+Name:   meow.tp3.b2
+Address: 10.3.3.6
+Name:   prout.tp3.b2
+Address: 10.3.3.5
+Name:   supersite.tp3.b2
+Address: 10.3.3.2
+Name:   web.tp3.b2
+Address: 10.3.3.2
+Name:   web2.tp3.b2
+Address: 10.3.3.4
+Name:   web3.tp3.b2
+Address: 10.3.3.5
+Name:   web4.tp3.b2
+Address: 10.3.3.6
+tp3.b2
+        origin = dns.tp3.b2
+        mail addr = admin.tp3.b2
+        serial = 2019061800
+        refresh = 3600
+        retry = 1800
+        expire = 604800
+        minimum = 86400
+> 
+
