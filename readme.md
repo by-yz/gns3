@@ -613,6 +613,8 @@ efrei.fr resolved to 51.255.68.208
 
 
 
+'''
+
 [root@localhost ~]# curl http://web.tp3.b2
 <!doctype html>
 <html>
@@ -924,6 +926,8 @@ efrei.fr resolved to 51.255.68.208
 </html>
 [root@localhost ~]#
 
+'''
+
 
 
 ### Partie IV 
@@ -946,7 +950,9 @@ byby㉿byby)-[~]
        valid_lft 3598sec preferred_lft 3598sec
     inet6 fe80::a00:27ff:fe79:1261/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
-                                                                             
+
+''' 
+
 ┌──(byby㉿byby)-[~]
 └─$ nslookup
 > set type=AXFR
@@ -991,3 +997,4 @@ tp3.b2
         minimum = 86400
 > 
 
+'''
