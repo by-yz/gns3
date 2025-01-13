@@ -613,9 +613,10 @@ efrei.fr resolved to 51.255.68.208
 
 
 
-```
+
 
 [root@localhost ~]# curl http://web.tp3.b2
+```
 <!doctype html>
 <html>
   <head>
