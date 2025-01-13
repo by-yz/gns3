@@ -1003,13 +1003,13 @@ tp3.b2
 #### DNS Flood
 
 ┌──(byby㉿byby)-[~/python_nabik/scpay]
-└─$ sudo python3 dns_flood.py
-DNS spoof query sent from 10.3.1.2 to 10.3.3.1
+└─$ sudo arpspoof -i eth0 -t 10.3.2.254 -r 10.3.2.11
+
 
 (pas utile je pense mais oklm)
 
 
-on lance l'attaque
+puis on lance l'attaque
 
 ```
 from scapy.all import *
