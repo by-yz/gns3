@@ -1007,6 +1007,9 @@ DNS spoof query sent from 10.3.1.2 to 10.3.3.1
 
 (pas utile je pense mais oklm)
 
+
+on lance l'attaque
+
 ```
 from scapy.all import *
 
@@ -1027,5 +1030,6 @@ print(f"DNS spoof query sent from {victim_ip} to {dns_server_ip}")
 
 ┌──(byby㉿byby)-[~/python_nabik/scpay]
 └─$ sudo python3 dns_flood.py
+
 DNS spoof query sent from 10.3.1.2 to 10.3.3.1
 
